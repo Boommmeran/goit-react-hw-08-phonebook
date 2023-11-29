@@ -8,7 +8,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { filterReducer } from 'redux/filter/filterSlice';
+import { filterReducer } from 'redux/filter/slice';
 import { contactsReducer } from './contacts/slice';
 import { persistAuthReducer } from './auth/slice';
 

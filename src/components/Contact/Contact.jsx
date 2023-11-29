@@ -6,7 +6,7 @@ export default function Contact({ contact }) {
   const dispatch = useDispatch();
 
   const { deleteContact } = contactsOperations;
-  const { name, phone, id } = contact;
+  const { name, number, id } = contact;
 
   const handleDelete = () => dispatch(deleteContact(id));
 
@@ -14,11 +14,11 @@ export default function Contact({ contact }) {
     <>
       <div>
         <Text>{name}</Text>
-        <Text>{phone}</Text>
+        <Text>{number}</Text>
       </div>
       <DeleteBnt type="button" onClick={handleDelete}>
         <DeleteIcon />
       </DeleteBnt>
     </>
   );
-};
+}

@@ -8,16 +8,6 @@ export const Container = styled.div`
   gap: 15px;
 `;
 
-export const MainTitle = styled.h1`
-  color: #0055b3;
-  font-weight: normal;
-  font-family: 'Ultra', sans-serif;
-  font-size: 36px;
-  line-height: 42px;
-  text-transform: uppercase;
-  text-shadow: 0 2px white, 0 3px #777;
-`;
-
 export const Title = styled.h2`
   color: #007bff;
   font-size: 22px;

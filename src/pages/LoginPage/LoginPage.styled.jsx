@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
 
-
 export const StyledForm = styled(Form)`
   max-width: 300px;
   margin: 0 auto;

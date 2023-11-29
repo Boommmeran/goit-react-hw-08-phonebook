@@ -2,6 +2,8 @@ import { logIn } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import MainTitle from 'components/MainTitle';
+import StyledSection from 'components/Section';
 import {
   StyledForm,
   Label,
@@ -12,6 +14,7 @@ import {
 
 const schema = yup.object().shape({
   email: yup.string().required('It is required field'),
+  password: yup.string().required('It is required field'),
 });
 
 export default function LoginPage() {
@@ -19,20 +22,18 @@ export default function LoginPage() {
 
   const handleSubmitForm = ({ email, password }, { resetForm }) => {
     dispatch(logIn({ email, password }));
-    console.log('dcwew');
     resetForm();
   };
 
   return (
-    <div>
-      <h1>Login Page</h1>
+    <StyledSection>
+      <MainTitle>Log In</MainTitle>
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={handleSubmitForm}
         validationSchema={schema}
       >
         <StyledForm>
-
           <Label>
             Email
             <Input
@@ -54,6 +55,6 @@ export default function LoginPage() {
           <Button type="submit">Log In</Button>
         </StyledForm>
       </Formik>
-    </div>
+    </StyledSection>
   );
-};
+}

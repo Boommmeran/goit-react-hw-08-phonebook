@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFilter } from 'redux/filter/filterSlice';
-import { selectFilter } from 'redux/filter/filterSelectors';
+import { changeFilter } from 'redux/filter/slice';
+import { selectFilter } from 'redux/filter/selectors';
 import { FilterContainer, FilterLabel, FilterInput } from './Filter.styled';
 
 export default function Filter() {
@@ -22,4 +22,4 @@ export default function Filter() {
       />
     </FilterContainer>
   );
-};
+}

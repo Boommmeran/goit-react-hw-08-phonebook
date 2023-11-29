@@ -1,7 +1,9 @@
 import { register } from 'redux/auth/operations';
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import MainTitle from 'components/MainTitle';
+import StyledSection from 'components/Section';
 import {
   StyledForm,
   Label,
@@ -12,6 +14,8 @@ import {
 
 const schema = yup.object().shape({
   name: yup.string().required('It is required field'),
+  email: yup.string().required('It is required field'),
+  password: yup.string().required('It is required field'),
 });
 
 export default function RegisterPage() {
@@ -19,13 +23,12 @@ export default function RegisterPage() {
 
   const handleSubmitForm = ({ name, email, password }, { resetForm }) => {
     dispatch(register({ name, email, password }));
-    console.log('dcwew');
     resetForm();
   };
-  
+
   return (
-    <div>
-      <h1>Register Page</h1>
+    <StyledSection>
+      <MainTitle>Register</MainTitle>
       <Formik
         initialValues={{ name: '', email: '', password: '' }}
         onSubmit={handleSubmitForm}
@@ -58,6 +61,6 @@ export default function RegisterPage() {
           <Button type="submit">Create account</Button>
         </StyledForm>
       </Formik>
-    </div>
+    </StyledSection>
   );
-};
+}

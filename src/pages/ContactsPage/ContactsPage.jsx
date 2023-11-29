@@ -6,7 +6,7 @@ import ContactsList from 'components/ContactsList';
 import Filter from 'components/Filter';
 import Loader from 'components/Loader';
 import Error from 'components/Error';
-import { Container, MainTitle, Title } from './ContactsPage.styled';
+import { Container, Title } from './ContactsPage.styled';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -24,7 +24,6 @@ export default function ContactsPage() {
 
   return (
     <Container>
-      <MainTitle>Phone book</MainTitle>
       <ContactsForm />
       <Title>Contacts</Title>
       <Filter />

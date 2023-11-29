@@ -1,6 +1,6 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAuth } from 'hooks';
 import { refreshCurrentUser } from 'redux/auth/operations';
 import Layout from 'components/Layout';
@@ -49,6 +49,7 @@ export default function App() {
           }
         />
       </Route>
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 }
